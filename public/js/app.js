@@ -1,4 +1,5 @@
 import { Message } from "./message.js";
+import { Events, Track } from "./track.js";
 import { User } from "./user.js";
 
 if (!User.isLogged()) {
@@ -8,6 +9,7 @@ if (!User.isLogged()) {
     event.preventDefault();
     const name = document.getElementById("name").value;
     User.login(name, () => {
+      Track.log(Events.Login, name);
       document.getElementById("name").value = "";
       location.reload();
     }, (error) => {
@@ -18,6 +20,7 @@ if (!User.isLogged()) {
   console.log("Logged");
   //Removing Login
   document.getElementById("loginForm").remove();
+  Track.log(Events.Start, User.getName());
   //Messages process
   document.getElementById("text").placeholder = "Escribiendo como... " + User.getName();
   document.getElementById("message").addEventListener("submit", (event) => {
@@ -25,6 +28,7 @@ if (!User.isLogged()) {
     const name = User.getName();
     const message = document.getElementById("text").value;
     Message.post(name, message, () => {
+      Track.log(Events.Send, name);
       document.getElementById("text").value = "";
     }, (error) => {
       console.error(error);
@@ -43,10 +47,8 @@ Message.listener((data) => {
   message.appendChild(text);
   message.appendChild(span);
   if (value.name == User.getName()) {
-    console.log("myself");
     message.classList.add("myself");
   }
   messages.appendChild(message);
   messages.scrollTop = messages.scrollHeight;
 });
-

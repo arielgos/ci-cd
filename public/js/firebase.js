@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
 import { getDatabase, ref, set, push, onChildAdded, query, orderByChild } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
 const config = {
@@ -17,4 +17,4 @@ const firebase = initializeApp(config);
 const analytics = getAnalytics(firebase);
 const database = getDatabase(firebase);
 
-export { database, ref, set, push, onChildAdded, query, orderByChild };
+export { database, ref, set, push, onChildAdded, query, orderByChild, analytics, logEvent };
