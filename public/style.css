@@ -82,9 +82,11 @@ body {
 }
 
 .messages {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: calc(100vh - 148px);
+  height: -webkit-fill-available;
+  padding-bottom: 160px;
   overflow: scroll;
 }
 
