@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="ES">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CI/CD Sample</title>
-
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="app">
+      <div class="messages"></div>
 
+      <div class="message" id="messageForm">
+        <form method="post" id="message">
+          <textarea name="text" id="text" cols="30" rows="3"></textarea>
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+    </div>
+
+    <div class="login" id="loginForm">
+      <form method="post" id="login">
+        Ingrese su nombre:
+        <input type="text" name="name" id="name" required minlength="3" />
+        <input type="submit" value="Ingresar" />
+      </form>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>
