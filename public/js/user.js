@@ -19,6 +19,10 @@ class User {
       }
     });
   }
+  static getName() {
+    return localStorage.getItem(USER);
+  }
+
   static clear() {
     localStorage.removeItem(USER);
   }
