@@ -71,7 +71,7 @@ body {
 }
 
 .app {
-  background-color: var(--light);
+  background-color: red;
   position: fixed;
   left: 25%;
   top: 0px;
