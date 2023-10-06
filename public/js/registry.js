@@ -10,7 +10,8 @@ if (!Customer.isLogged()) {
         Customer.save({
             name: name,
             email: email,
-            phone: phone
+            phone: phone,
+            contacts: []
         }, () => {
             Track.log(Events.Registry, name);
             location.reload();
@@ -18,7 +19,7 @@ if (!Customer.isLogged()) {
 
     });
 } else {
-    
+
     document.getElementById("registry").remove();
 
     new QRCode(document.getElementById("qrcode"), {

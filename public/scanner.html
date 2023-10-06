@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ES">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover"
+    />
+    <title>QR Scannig</title>
+    <link rel="stylesheet" href="registry.css" />
+  </head>
+  <body>
+    <div class="window">
+      <form method="post" id="scan">
+        
+        <video id="video"></video>
+        <h1>Capturados por: <span id="name"></span></h1>
+        <input type="submit" value="Leer" />
+        <div id="captured">
+        </div>
+      </form>
+    </div>
+    <script type="module" src="js/scanner.js"></script>
+  </body>
+</html>

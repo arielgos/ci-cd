@@ -59,6 +59,12 @@ body {
   display: unset !important;
 }
 
+video{
+  height: auto;
+  width: 100%;
+  display: none;
+}
+
 @media screen and (max-width: 640px) {
   .window {
     width: calc(94% - 20px);
@@ -66,3 +72,5 @@ body {
     top: 5vh;
   }
 }
+
+

@@ -119,6 +119,7 @@ body {
   color: var(--light);
 }
 
+
 @media screen and (max-width: 640px) {
   .app {
     left: 0;
