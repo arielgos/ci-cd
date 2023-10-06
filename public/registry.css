@@ -1,0 +1,68 @@
+:root {
+  --dark: #2b2d42;
+  --medium: #8d99ae;
+  --light: #edf2f4;
+  --accent: #ef233c;
+  --accent-dark: #d90429;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--dark);
+}
+
+.window {
+  position: relative;
+  width: calc(50% - 20px);
+  background-color: var(--light);
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 25%;
+  top: 10vh;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.window form input {
+  color: var(--dark);
+  font-size: 1.5rem;
+  padding: 7px;
+  width: calc(100% - 17px);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--dark);
+  resize: none;
+}
+
+.window form input[type="submit"] {
+  background-color: var(--accent-dark);
+  border: 0px;
+  width: 100%;
+  color: var(--light);
+  cursor: pointer;
+}
+
+#qrcode {
+  position: relative;
+  display: block;
+  clear: both;
+  width: 100%;
+  text-align: center;
+}
+
+#qrcode img {
+  display: unset !important;
+}
+
+@media screen and (max-width: 640px) {
+  .window {
+    width: calc(94% - 20px);
+    margin-left: 3%;
+    top: 5vh;
+  }
+}

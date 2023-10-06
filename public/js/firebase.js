@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
 import { getDatabase, ref, set, push, onChildAdded, query, orderByChild } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
 const config = {
   apiKey: "AIzaSyAJP0ZrgXDQh-8_VFPSLFSt9GjXNBmbOWM",
@@ -16,5 +17,6 @@ const config = {
 const firebase = initializeApp(config);
 const analytics = getAnalytics(firebase);
 const database = getDatabase(firebase);
+const firestore = getFirestore(firebase);
 
-export { database, ref, set, push, onChildAdded, query, orderByChild, analytics, logEvent };
+export { database, ref, set, push, onChildAdded, query, orderByChild, analytics, logEvent, firestore, collection, addDoc };
